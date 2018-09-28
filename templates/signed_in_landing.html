@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "notifications.html" %}
+{% include "list_cat.html" %}
+
+<div>
+	<!-- No need to check user id in session or not -->
+	<h3><span style="color:#337ab7">All Items</span>
+		<div class="pull-right">
+			<a href = "{{ url_for('newCatalogItem') }}">
+				<button><span class="glyphicon glyphicon-plus-sign"></span>
+				</button>
+			</a>
+		</div>
+	</h3>
+	{% include "all_items_of_all_cat.html" %}
+</div>
+
+{% endblock %}}

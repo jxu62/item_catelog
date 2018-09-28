@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span style="color:#337ab7">Account</span>
+      </button>
+      <h1><a class="navbar-brand" href="{{ url_for('showCatalog') }}"><span style="color:#337ab7">Items Warehouse</span></a></h1>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!-- make sure the current user is signed in -->
+        {%if 'username' not in session %}
+          <li><a href="{{url_for('showLogin')}}">Login</a></li>
+        {% else %}
+          {% if session.user_id %}
+          <li class="dropdown">
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="profile name" class="navbar-profile-image image-responsive pull-left">
+              <span style="color:#337ab7">Menu</span>
+              <ul class="dropdown-menu">
+              <li>
+                <a href="{{ url_for('createCategory') }}">Add New Category</a></li>
+              <li><a href="{{ url_for('newCatalogItem') }}">Add New Item</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ url_for('showCatalog') }}">Main Page</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{url_for('disconnect')}}">Logout {{ session['email']}}</a></li>
+              </ul>
+            </li>
+          {% endif %}
+        {% endif %} 
+      </ul>
+    </div>
+</nav>

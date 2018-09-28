@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+<h3 style="color:#337ab7">Do you want to delete <u><strong>{{item.name}}</strong></u>? </h3>
+
+
+<hr>
+<p  style="color:#337ab7"> Please click on button to confirm deletion. Otherwise, click on top left button to go back </p>
+<hr>
+
+<form  method = 'post'>
+	<button type="submit" class="btn btn-info" id="submit" type="submit">
+	Yes</button>
+</form>
+
+{% endblock %}

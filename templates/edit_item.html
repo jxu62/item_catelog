@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="card card-section item-info-card">
+	<div>
+		<p style="color:#337ab7">Please fill in the changes for your item <u><b>{{item.name}}</b></u> and then click on the button to edit. Or use the top left corner to go back</p>
+		<hr>
+	</div>
+	<div>
+		<form method = "post">
+			<p style="color:#337ab7">Name:</p>
+			<input type ="text" maxlength="77" class="form-control" name="name" value="{{ item.name }}">
+
+			<p style="color:#337ab7">Description:</p>
+			<textarea class="form-control" maxlength="400" name="description">{{ item.description }}
+			</textarea>
+
+			<p style="color:#337ab7">Price:</p>
+			<div class="input-group">
+			<div class="input-group-addon">$</div>
+			<input type ="text" class="form-control" maxlength="20" name="price" value="{{ item.price }}">
+			</div>
+
+			{% include "add_edit_item_cat_dropdown.html" %}
+
+			<button type="submit" class="btn btn-info" id="submit" type="submit">Edit</button>
+
+		</form>
+	</div>
+</div>
+{% endblock %}

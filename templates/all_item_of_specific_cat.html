@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "notifications.html" %}
+{% include "list_cat.html" %}
+<div>
+	<h3><span style="color:#337ab7">All Items of Category {{ category.name }} </span>
+	<!-- Only show the add button when the user is logged in -->
+	{% if session.user_id %}
+	<div class="pull-right">
+		<a href = "{{ url_for('newCatalogItem') }}">
+			<button><span class="glyphicon glyphicon-plus-sign"></span></button>
+		</a>
+	</div>
+	{% endif %}
+	</h3>
+	{% include "all_items_of_all_cat.html" %}
+</div>
+{% endblock %}

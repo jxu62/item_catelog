@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+<div>
+	<form method = "post">
+		<div class="form-group">
+			<p style="color:#337ab7">Please fill in the form as much as possible and then click on the button to add. Or use the top left corner to go back</p>
+			<hr>
+			<!-- new item's name input field -->
+			<div style="color:#337ab7">Name:</div>
+			<input type ="text" maxlength="100" class="form-control" name="name" placeholder="Name of the New Item">
+
+			<!-- new item's description input field -->
+			<div style="color:#337ab7">Description:</div>
+			<textarea class="form-control" maxlength="300" rows="3" name="description" placeholder="Description of the New Item"></textarea>
+
+			<!-- new item's price input field -->
+			<div style="color:#337ab7">Price:</div>
+			<div class="input-group">
+				<div class="input-group-addon" style="color:#337ab7">$</div>
+				<input type ="text" class="form-control" maxlength="20" name="price" placeholder="Price of the New Item">
+			</div>
+
+			<!-- new item's category selection field -->
+			{% include "add_edit_item_cat_dropdown.html" %}
+
+			<button><span style="color:#337ab7" class="glyphicon glyphicon-plus-sign"></span> </button>
+
+		</div>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<div>
+	<form method="post">
+		<p style="color:#337ab7">Please fill in the name of your new categoryand then click on the button to add. Or use the top left corner to go back</p>
+		<hr>
+		<p><span style="color:#337ab7">Your New Category Name: </span></p>
+		<input type ="text" maxlength="77" name="name" placeholder="New Category">
+        <button><span style="color:#337ab7" class="glyphicon glyphicon-plus-sign"></span> 
+        </button>
+	</form>
+</div>
+{% endblock %}

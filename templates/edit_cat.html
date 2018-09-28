@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block content %}
+<div>
+	<div>
+		<p style="color:#337ab7">Please fill in the change for your category <u><strong>{{category.name}}</strong></u> and then click on the button to edit. Or use the top left corner to go back</p>
+		<hr>
+	</div>
+	<div>
+		<form action="{{ url_for('editCategory',category_id = category.id)}}"  method="post">
+
+			<p style="color:#337ab7">New Name for <u><strong>{{category.name}}</strong></u>:</p>
+
+			<input type ="text" maxlength="77" name="name" value="{{category.name}}">
+
+			<button type="submit" class="btn btn-info" id="submit" type="submit">Edit</button>
+
+		</form>
+	</div>
+</div>
+{% endblock %}
